@@ -29,14 +29,15 @@ namespace WpfApp18
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //DataContext = new AppViewModel();
             Thread t = new Thread(countword);
             t.IsBackground = true;
-            t.Start(FileName);
+            t.Start();
         }
         void countword(object data)
         {
             var path = data as string;
-            var text = File.ReadAllText(@"C:\Users\Илья\source\repos\WpfApp17\obj\Debug\Текстовый документ.txt");
+            var text = File.ReadAllText(path);
             var worldls = text.Split(' ');
             //MessageBox.Show(worldls.Length.ToString());
             Dispatcher.Invoke(() => { Result.Content = "Result:" + worldls.Length.ToString(); });

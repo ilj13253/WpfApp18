@@ -8,11 +8,11 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
         <TextBlock x:Name="FileName" Text="{Binding FileName}"/>
-        <Button Command="{Binding StartCommand}" Width="75" Height="29" Margin="359,0,359.6,0"/>
+        <Button Content="" Command="{Binding StartCommand}" Width="75" Height="29" Margin="359,0,359.6,0"/>
         <Label x:Name="Result" Content="{Binding Result}">
         </Label>
         <Label x:Name="ListResult" Content="{Binding ListResult}"></Label>
-        <ListBox ItemsSource="{Binding ListResult}">
+        <ListBox x:Name="ListRes" ItemsSource="{Binding ListResult}">
         </ListBox>
     </StackPanel>
 </Window>
